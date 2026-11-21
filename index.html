@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stopwatch App</title>
+<style>
+body{font-family:Arial;background:#0f172a;color:white;text-align:center;padding:30px}
+main{max-width:500px;margin:40px auto;background:#1e293b;padding:30px;border-radius:16px}
+#display{font-size:45px;margin:30px 0;color:#38bdf8}
+button{padding:12px 18px;background:#0284c7;color:white;border:0;border-radius:8px;cursor:pointer;margin:4px}
+</style>
+</head>
+<body>
+<main>
+<h1>Stopwatch</h1>
+<p>Measure your time accurately.</p>
+<div id="display">00:00:00</div>
+<button onclick="start()">Start</button>
+<button onclick="pause()">Pause</button>
+<button onclick="reset()">Reset</button>
+</main>
+<script>
+let elapsed=0,started=0,timer=null;
+function render(){
+ const ms=elapsed+(timer!==null?performance.now()-started:0);
+ const m=Math.floor(ms/60000);
+ const s=Math.floor(ms/1000)%60;
+ const c=Math.floor(ms/10)%100;
+ document.getElementById("display").textContent=
+ [m,s,c].map(n=>String(n).padStart(2,"0")).join(":");
+}
+function start(){
+ if(timer!==null)return;
+ started=performance.now();
+ timer=setInterval(render,20);
+}
+function pause(){
+ if(timer===null)return;
+ elapsed+=performance.now()-started;
+ clearInterval(timer);
+ timer=null;
+ render();
+}
+function reset(){
+ pause();
+ elapsed=0;
+ render();
+}
+</script>
+</body>
+</html>
