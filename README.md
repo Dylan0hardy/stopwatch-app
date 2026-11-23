@@ -1,23 +1,23 @@
-# Stopwatch App
+## Stopwatch Usage Guide
 
-A digital stopwatch for measuring elapsed time.
+The stopwatch application measures
+elapsed time using a digital interface.
 
-## Features
+### Main Controls
 
-- Start control
-- Pause control
-- Reset control
+- Start timing
+- Pause timing
+- Reset the stopwatch
 
-## How to Use
+### How to Use
 
-Click Start to begin measuring time.
+1. Open the stopwatch application.
+2. Select Start to begin timing.
+3. Select Pause to stop temporarily.
+4. Select Reset to start again.
 
-## Technologies
+### Development Notes
 
-- HTML
-- CSS
-- JavaScript
-
-## Running Locally
-
-Open `index.html` in a modern web browser.
+- Maintain accurate time measurement.
+- Keep controls easy to understand.
+- Test the stopwatch after repeated use.
