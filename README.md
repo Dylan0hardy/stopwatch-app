@@ -21,3 +21,12 @@ elapsed time using a digital interface.
 - Maintain accurate time measurement.
 - Keep controls easy to understand.
 - Test the stopwatch after repeated use.
+## Manual Testing Checklist
+
+- [ ] Start the stopwatch and check that time increases.
+- [ ] Pause and resume without losing elapsed time.
+- [ ] Reset the stopwatch and verify zero is displayed.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
